@@ -1,0 +1,132 @@
+:root {
+  --primary-color: #0F4C81;
+  --primary-hover: #0b375d;
+  --primary-light: #e6f0fa;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border-color: #e2e8f0;
+  --bg-color: #F5F7FA;
+  --white: #ffffff;
+  --success-color: #28A745;
+  --success-bg: #e6f4ea;
+  --warning-color: #FFC107;
+  --warning-bg: #fffde6;
+  --danger-color: #DC3545;
+  --danger-bg: #fce8e6;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --sidebar-bg: #0F4C81;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #1662a0;
+  --navbar-bg: #ffffff;
+  --navbar-text: #1e293b;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --primary-color: #2980b9;
+  --primary-hover: #3498db;
+  --primary-light: #1b3a4b;
+  --text-dark: #f8fafc;
+  --text-light: #94a3b8;
+  --border-color: #334155;
+  --bg-color: #0f172a;
+  --white: #1e293b;
+  --success-color: #2ec4b6;
+  --success-bg: #0d3b36;
+  --warning-color: #ffb703;
+  --warning-bg: #4a3300;
+  --danger-color: #ff006e;
+  --danger-bg: #470020;
+  --card-bg: #1e293b;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --sidebar-bg: #0b1a2e;
+  --sidebar-text: #e2e8f0;
+  --sidebar-hover: #162a45;
+  --navbar-bg: #1e293b;
+  --navbar-text: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+body, html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure the app occupies full height */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  text-align: left;
+  max-width: 100%;
+  border: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Global utility classes for premium styling */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Flag ribbon to give local government vibes */
+.gov-ribbon {
+  height: 4px;
+  background: linear-gradient(to right, #FF9933, #FFFFFF, #128807);
+  width: 100%;
+}

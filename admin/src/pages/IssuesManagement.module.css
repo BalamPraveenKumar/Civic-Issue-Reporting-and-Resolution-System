@@ -1,0 +1,339 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.titleHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+/* Tabs Bar */
+.tabsContainer {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-light);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--primary-color);
+}
+
+.activeTab {
+  color: var(--primary-color);
+}
+
+.activeTab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Filters Panel Card */
+.filtersCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.filterLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input, .select {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus, .select:focus {
+  border-color: var(--primary-color);
+}
+
+.resetBtn {
+  padding: 0.6rem 1rem;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.resetBtn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Table Area */
+.tableCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.th {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 700;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.th:hover {
+  background-color: var(--border-color);
+}
+
+.sortIcon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  vertical-align: middle;
+}
+
+.td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-dark);
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.tr:hover {
+  background-color: rgba(15, 76, 129, 0.02);
+}
+
+.trAlternate {
+  background-color: rgba(245, 247, 250, 0.5);
+}
+
+.complaintNum {
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.viewBtn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badgePending {
+  background-color: var(--warning-bg);
+  color: #c49000;
+  border: 1px solid #ffeeba;
+}
+
+.badgeProgress {
+  background-color: #e8f7fa;
+  color: #117a8b;
+  border: 1px solid #bee5eb;
+}
+
+.badgeResolved {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  border: 1px solid #c3e6cb;
+}
+
+.badgeRejected {
+  background-color: var(--danger-bg);
+  color: var(--danger-color);
+  border: 1px solid #f5c6cb;
+}
+
+/* Priority Chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.chipLow {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.chipMedium {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.chipHigh {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.chipCritical {
+  background-color: #fae8ff;
+  color: #d946ef;
+  border: 1px solid #f5d0fe;
+  animation: flashBorder 2s infinite;
+}
+
+@keyframes flashBorder {
+  0% { border-color: #f5d0fe; }
+  50% { border-color: #d946ef; }
+  100% { border-color: #f5d0fe; }
+}
+
+/* Pagination Row */
+.paginationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  border-top: 1px solid var(--border-color);
+}
+
+.pageInfo {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--primary-light);
+}
+
+.pageBtnActive {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.pageBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noData {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+}

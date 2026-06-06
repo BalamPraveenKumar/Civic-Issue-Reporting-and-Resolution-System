@@ -1,0 +1,335 @@
+.layoutContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-speed) ease;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  position: relative;
+}
+
+.sidebarCollapsed {
+  width: 70px;
+}
+
+.sidebarHeader {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  white-space: normal;
+  flex: 1;
+  min-width: 0;
+}
+
+.brandIcon {
+  color: #FF9933; /* Saffron accents for government style */
+  flex-shrink: 0;
+}
+
+.toggleBtn {
+  background: transparent;
+  border: none;
+  color: var(--sidebar-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.toggleBtn:hover {
+  background-color: var(--sidebar-hover);
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0.75rem;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.menuItem:hover, .activeMenuItem {
+  color: #ffffff;
+  background-color: var(--sidebar-hover);
+  box-shadow: inset 4px 0 0 #FF9933; /* Saffron ribbon hint */
+}
+
+.menuText {
+  transition: opacity var(--transition-speed);
+}
+
+.menuTextHidden {
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.sidebarFooter {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  color: #ff8a8a;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Content Pane */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Top Navbar */
+.navbar {
+  height: 70px;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 90;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.navbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.navTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.navSubtitle {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.navbarRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navIconBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.navIconBtn:hover {
+  background-color: var(--primary-light);
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: var(--danger-color);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 10px;
+  min-width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 2px solid var(--navbar-bg);
+}
+
+/* Profile Section */
+.profileContainer {
+  position: relative;
+}
+
+.profileMenuToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  text-align: left;
+}
+
+.profileMenuToggle:hover {
+  background-color: var(--primary-light);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid #FF9933;
+}
+
+.adminInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.adminRole {
+  font-size: 0.7rem;
+  color: var(--text-light);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  width: 180px;
+  z-index: 120;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+/* Page Outer Scroll Area */
+.pageBody {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .sidebarCollapsed {
+    left: -70px;
+    width: 0;
+    overflow: hidden;
+  }
+}
