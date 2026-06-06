@@ -295,6 +295,19 @@ const UserLogin = () => {
           </div>
         </form>
 
+        {!isOtpSent && (
+          <div className={styles.registerPrompt}>
+            <span>Need an account? </span>
+            <button 
+              type="button" 
+              className={styles.registerLink}
+              onClick={() => navigate("/user/register")}
+            >
+              Create Citizen Account
+            </button>
+          </div>
+        )}
+
         <div className={styles.footerLinks}>
           <a href="#" onClick={(e) => e.preventDefault()} className={styles.link}>
             <HelpCircle size={14} /> Need Help?

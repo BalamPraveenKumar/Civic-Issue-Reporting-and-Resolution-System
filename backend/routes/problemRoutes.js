@@ -5,10 +5,12 @@ import {
     createProblem,
     getMyIssues,
     getDistrictIssues,
-    updateProblemStatus
+    updateProblemStatus,
+    toggleUpvote
 } from "../controllers/problemController.js";
 
 import authMiddleware from "../middleware/authMiddleware.js";
+import adminMiddleware from "../middleware/adminMiddleware.js";
 
 import upload from "../middleware/uploadMiddleware.js";
 
@@ -37,10 +39,18 @@ router.get(
     authMiddleware,
     getDistrictIssues
 );
+
 router.patch(
     "/:id/status",
     authMiddleware,
+    adminMiddleware,
     updateProblemStatus
+);
+
+router.post(
+    "/:id/upvote",
+    authMiddleware,
+    toggleUpvote
 );
 
 export default router;

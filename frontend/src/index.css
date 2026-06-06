@@ -8,7 +8,30 @@
   --bg-color: #f8fafc;
   --white: #ffffff;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Status badge colors */
+  --status-pending-bg: #fff7ed;
+  --status-pending-text: #c2410c;
+  --status-pending-border: #fdba74;
+
+  --status-inprogress-bg: #eff6ff;
+  --status-inprogress-text: #1d4ed8;
+  --status-inprogress-border: #93c5fd;
+
+  --status-resolved-bg: #f0fdf4;
+  --status-resolved-text: #15803d;
+  --status-resolved-border: #86efac;
+
+  --status-rejected-bg: #fef2f2;
+  --status-rejected-text: #b91c1c;
+  --status-rejected-border: #fca5a5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
 }
+
 
 * {
   box-sizing: border-box;
@@ -57,3 +80,79 @@ button, input {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Admin Layout Specific Variables */
+:root {
+  --sidebar-bg: #0F4C81;
+  --sidebar-text: #ffffff;
+  --sidebar-hover: #1662a0;
+  --navbar-bg: #ffffff;
+  --navbar-text: #1e293b;
+  --transition-speed: 0.3s;
+  
+  /* Default statuses and card defaults for admin if different */
+  --success-color: #28A745;
+  --success-bg: #e6f4ea;
+  --warning-color: #FFC107;
+  --warning-bg: #fffde6;
+  --danger-color: #DC3545;
+  --danger-bg: #fce8e6;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Theme Variables for Admin Portal */
+.dark-theme {
+  --primary-color: #2980b9;
+  --primary-hover: #3498db;
+  --primary-light: #1b3a4b;
+  --text-dark: #f8fafc;
+  --text-light: #94a3b8;
+  --border-color: #334155;
+  --bg-color: #0f172a;
+  --white: #1e293b;
+  --success-color: #2ec4b6;
+  --success-bg: #0d3b36;
+  --warning-color: #ffb703;
+  --warning-bg: #4a3300;
+  --danger-color: #ff006e;
+  --danger-bg: #470020;
+  --card-bg: #1e293b;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --sidebar-bg: #0b1a2e;
+  --sidebar-text: #e2e8f0;
+  --sidebar-hover: #162a45;
+  --navbar-bg: #1e293b;
+  --navbar-text: #f8fafc;
+}
+
+/* Admin Premium Utility Styles */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.gov-ribbon {
+  height: 4px;
+  background: linear-gradient(to right, #FF9933, #FFFFFF, #128807);
+  width: 100%;
+}
+

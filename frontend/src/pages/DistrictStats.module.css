@@ -1,0 +1,423 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 72px);
+}
+
+.header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.headerTitle h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.headerTitle p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.refreshBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.refreshBtn:hover {
+  background-color: #f8fafc;
+  color: #104f9e;
+  border-color: #104f9e;
+}
+
+.refreshBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: loadingSpin 1s linear infinite;
+}
+
+@keyframes loadingSpin {
+  to { transform: rotate(360deg); }
+}
+
+.errorAlert {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* KPI Cards Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.statInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.statIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconTotal { background: #eff6ff; color: #2563eb; }
+.iconResolved { background: #f0fdf4; color: #16a34a; }
+.iconPending { background: #fff7ed; color: #ea580c; }
+.iconSla { background: #f5f3ff; color: #7c3aed; }
+
+/* Dashboard Columns Split */
+.dashboardSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.leftCol,
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+  padding: 24px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.cardDesc {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Custom SVG Doughnut styles */
+.pieContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pieChartWrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.svgPie {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.pieSegment {
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.pieSegment:hover {
+  opacity: 0.85;
+}
+
+.pieChartCenterLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pieChartCenterLabel strong {
+  font-size: 20px;
+  font-weight: 850;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.pieChartCenterLabel span {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.pieLegend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  font-size: 12.5px;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.legendName {
+  font-weight: 600;
+  color: #475569;
+  flex: 1;
+}
+
+.legendCount {
+  font-weight: 700;
+  color: #1e293b;
+  font-family: monospace;
+}
+
+.emptyChart {
+  padding: 40px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Category Progress Bars */
+.categoryTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categoryRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.categoryLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.catName {
+  font-weight: 700;
+  color: #334155;
+}
+
+.catCounts {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.barContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.barBg {
+  flex: 1;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.barPercentage {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  width: 32px;
+  text-align: right;
+  font-family: monospace;
+}
+
+/* State Leaderboard Ranking List */
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leaderboardItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 13px;
+}
+
+.rank {
+  font-weight: 900;
+  font-size: 14px;
+  color: #104f9e;
+  width: 30px;
+}
+
+.distName {
+  font-weight: 650;
+  color: #475569;
+  flex: 1;
+}
+
+.score {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.currentDistRank {
+  background-color: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.currentDistRank .rank,
+.currentDistRank .distName,
+.currentDistRank .score {
+  color: #1d4ed8;
+}
+
+.leaderboardNotice {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 550;
+}
+
+/* Loading Panel */
+.loading {
+  padding: 80px 20px;
+  text-align: center;
+  color: #64748b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3.5px solid #e2e8f0;
+  border-top-color: #104f9e;
+  border-radius: 50%;
+  animation: loadingSpin 0.75s linear infinite;
+}
+
+/* Responsive configurations */
+@media (max-width: 980px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboardSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 20px;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

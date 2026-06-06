@@ -7,13 +7,13 @@
   flex: 1;
 }
 
-.loginCard {
+.registerCard {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
   border: 1px solid #e2e8f0;
   width: 100%;
-  max-width: 460px;
+  max-width: 480px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -74,6 +74,8 @@
   font-size: 13.5px;
   color: #991b1b;
   text-align: left;
+  display: flex;
+  align-items: center;
   animation: fadeIn 0.2s ease;
 }
 
@@ -97,37 +99,97 @@
   flex-shrink: 0;
 }
 
-.otpSection {
-  background-color: #f8fafc;
-  border: 1px dashed #cbd5e1;
-  padding: 16px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  animation: slideDown 0.3s ease;
-}
-
-.otpTip {
-  font-size: 12.5px;
-  color: #64748b;
-  margin: 6px 0 0 0;
+/* Custom Select Dropdown Styling */
+.selectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
   text-align: left;
+  margin-bottom: 20px;
 }
 
-.code {
-  background-color: #e2e8f0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: bold;
+.selectLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 3px;
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 44px;
+}
+
+.selectWrapper:focus-within {
+  border-color: #104f9e;
+  box-shadow: 0 0 0 3px rgba(16, 79, 158, 0.15);
+}
+
+.selectWrapperError {
+  border-color: #e74c3c;
+}
+
+.selectWrapperError:focus-within {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+}
+
+.disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.prefixIcon {
+  position: absolute;
+  left: 12px;
+  color: #7f8c8d;
+  pointer-events: none;
+}
+
+.select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  padding: 12px 14px 12px 40px;
+  font-size: 15px;
+  font-family: inherit;
+  color: #2c3e50;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%237f8c8d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 10px auto;
+}
+
+.errorText {
+  font-size: 12.5px;
+  color: #e74c3c;
+  font-weight: 500;
+  margin-top: 2px;
+  animation: slideDown 0.2s ease;
 }
 
 .actionSection {
   margin-top: 10px;
-}
-
-.otpActions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .footerLinks {
@@ -137,27 +199,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
-.link {
-  font-size: 12.5px;
+.backBtn {
+  background: none;
+  border: none;
+  font-size: 13px;
   color: #64748b;
-  text-decoration: none;
-  font-weight: 500;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  transition: color 0.2s ease;
+  gap: 6px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+  font-family: inherit;
+  outline: none;
 }
 
-.link:hover {
+.backBtn:hover {
   color: #104f9e;
-}
-
-.divider {
-  color: #cbd5e1;
-  font-size: 12px;
 }
 
 @keyframes fadeIn {
@@ -168,7 +228,7 @@
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-4px);
   }
   to {
     opacity: 1;
@@ -195,29 +255,4 @@
     padding-left: 20px;
     padding-right: 20px;
   }
-}
-
-.registerPrompt {
-  padding: 0 32px 24px 32px;
-  font-size: 13.5px;
-  color: #64748b;
-  text-align: center;
-  margin-top: -8px;
-}
-
-.registerLink {
-  background: none;
-  border: none;
-  color: #104f9e;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  text-decoration: underline;
-  font-family: inherit;
-  font-size: 13.5px;
-  transition: color 0.15s;
-}
-
-.registerLink:hover {
-  color: #0b3a75;
 }

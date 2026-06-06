@@ -143,6 +143,8 @@ export const userTokenGenerate = async (req, res) => {
                 id: user._id,
                 name: user.name,
                 phoneNumber: user.phoneNumber,
+                aadhaarNumber: user.aadhaarNumber,
+                districtId: user.districtId,
                 role: "user"
             }
         });

@@ -19,6 +19,7 @@ const MOCK_ISSUES = [
       name: "Rajesh Kumar",
       phoneNumber: "9845012345"
     },
+    upvotes: ["1", "2", "3", "4", "5"],
     createdAt: "2026-06-01T10:15:30.000Z",
     updatedAt: "2026-06-01T10:15:30.000Z"
   },
@@ -38,6 +39,7 @@ const MOCK_ISSUES = [
       name: "Amit Patel",
       phoneNumber: "9900112233"
     },
+    upvotes: ["1", "2", "3"],
     createdAt: "2026-06-03T08:30:00.000Z",
     updatedAt: "2026-06-04T11:20:00.000Z"
   },
@@ -57,6 +59,7 @@ const MOCK_ISSUES = [
       name: "Sita Sharma",
       phoneNumber: "9887766554"
     },
+    upvotes: ["1", "2", "3", "4", "5", "6", "7", "8"],
     createdAt: "2026-05-28T09:00:00.000Z",
     updatedAt: "2026-05-30T16:45:00.000Z"
   },
@@ -76,6 +79,7 @@ const MOCK_ISSUES = [
       name: "Vikram Singh",
       phoneNumber: "9740055667"
     },
+    upvotes: ["1", "2", "3", "4"],
     createdAt: "2026-06-02T14:40:00.000Z",
     updatedAt: "2026-06-03T10:00:00.000Z"
   },
@@ -95,6 +99,7 @@ const MOCK_ISSUES = [
       name: "Priya Nair",
       phoneNumber: "9123456789"
     },
+    upvotes: ["1", "2"],
     createdAt: "2026-06-05T19:20:00.000Z",
     updatedAt: "2026-06-05T19:20:00.000Z"
   },
@@ -112,6 +117,7 @@ const MOCK_ISSUES = [
       name: "Karan Johar",
       phoneNumber: "9665544332"
     },
+    upvotes: [],
     createdAt: "2026-05-25T22:10:00.000Z",
     updatedAt: "2026-05-26T11:00:00.000Z"
   },
@@ -129,6 +135,7 @@ const MOCK_ISSUES = [
       name: "Harish Rao",
       phoneNumber: "9876543211"
     },
+    upvotes: ["1", "2", "3", "4", "5"],
     createdAt: "2026-06-05T07:30:00.000Z",
     updatedAt: "2026-06-05T09:00:00.000Z"
   }

@@ -11,7 +11,8 @@ import {
   CheckCircle,
   AlertTriangle,
   Play,
-  X
+  X,
+  ThumbsUp
 } from "lucide-react";
 import { useIssues } from "../hooks/useIssues";
 import styles from "./IssueDetails.module.css";
@@ -205,6 +206,13 @@ const IssueDetails = () => {
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Grievance ID</span>
                 <span className={`${styles.metaValue} ${styles.complaintNum}`} style={{ fontSize: "1rem" }}>{issue._id}</span>
+              </div>
+              <div className={styles.metaItem}>
+                <span className={styles.metaLabel}>Citizen Endorsements</span>
+                <span className={styles.metaValue} style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  <ThumbsUp size={14} color="#104f9e" />
+                  <strong>{issue.upvotes?.length || 0} Citizens Supported</strong>
+                </span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Priority Flag</span>

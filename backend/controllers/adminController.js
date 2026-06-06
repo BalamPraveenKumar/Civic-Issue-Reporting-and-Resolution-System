@@ -11,6 +11,15 @@ export const createAdmin = async (req, res) => {
             districtId,
         } = req.body;
 
+        // Verify district existence
+        const districtExists = await District.findOne({ districtId });
+        if (!districtExists) {
+            return res.status(400).json({
+                success: false,
+                message: `District with ID '${districtId}' does not exist.`
+            });
+        }
+
         const hashedPassword = await bcrypt.hash(
             password,
             10

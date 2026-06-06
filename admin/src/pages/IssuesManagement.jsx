@@ -8,7 +8,8 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ExternalLink,
-  X
+  X,
+  ThumbsUp
 } from "lucide-react";
 import { useIssues } from "../hooks/useIssues";
 import styles from "./IssuesManagement.module.css";
@@ -127,6 +128,10 @@ const IssuesManagement = () => {
     } else if (sortField === "priority") {
       const priorityWeights = { Low: 1, Medium: 2, High: 3, Critical: 4 };
       comparison = (priorityWeights[a.priority] || 0) - (priorityWeights[b.priority] || 0);
+    } else if (sortField === "upvotes") {
+      const aCount = Array.isArray(a.upvotes) ? a.upvotes.length : 0;
+      const bCount = Array.isArray(b.upvotes) ? b.upvotes.length : 0;
+      comparison = aCount - bCount;
     }
 
     return sortOrder === "asc" ? comparison : -comparison;
@@ -301,6 +306,10 @@ const IssuesManagement = () => {
                     Created Date
                     <span className={styles.sortIcon}><ArrowUpDown size={13} /></span>
                   </th>
+                  <th className={styles.th} onClick={() => handleSort("upvotes")}>
+                    Endorsements
+                    <span className={styles.sortIcon}><ArrowUpDown size={13} /></span>
+                  </th>
                   <th className={styles.th}>Status</th>
                   <th className={styles.th} onClick={() => handleSort("priority")}>
                     Priority
@@ -328,6 +337,12 @@ const IssuesManagement = () => {
                         month: "short",
                         year: "numeric"
                       })}
+                    </td>
+                    <td className={styles.td}>
+                      <span style={{ display: "flex", alignItems: "center", gap: "5px", fontWeight: 650, color: "var(--text-dark)" }}>
+                        <ThumbsUp size={12} color="#104f9e" />
+                        {issue.upvotes?.length || 0}
+                      </span>
                     </td>
                     <td className={styles.td}>
                       <span className={`${styles.badge} ${getStatusBadgeClass(issue.status)}`}>

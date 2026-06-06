@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import District from "../models/District.js";
 import jwt from "jsonwebtoken";
 
 // Step 1: Citizen Login Credentials Verification
@@ -65,6 +66,8 @@ export const userTokenGenerate = async (req, res) => {
                 id: user._id,
                 name: user.name,
                 phoneNumber: user.phoneNumber,
+                aadhaarNumber: user.aadhaarNumber,
+                districtId: user.districtId,
                 role: "user"
             }
         });
@@ -79,11 +82,23 @@ export const userTokenGenerate = async (req, res) => {
 
 export const createUser = async (req, res) => {
     try {
+        const { districtId } = req.body;
+
+        // Verify district existence
+        const districtExists = await District.findOne({ districtId });
+        if (!districtExists) {
+            return res.status(400).json({
+                success: false,
+                message: `District with ID '${districtId}' does not exist.`
+            });
+        }
+
         const user = await User.create(req.body);
 
         res.status(201).json(user);
     } catch (error) {
         res.status(500).json({
+            success: false,
             message: error.message
         });
     }

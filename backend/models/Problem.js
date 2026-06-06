@@ -56,6 +56,12 @@ const problemSchema = new mongoose.Schema(
             type: String,
             default: "",
         },
+
+        upvotes: {
+            type: [mongoose.Schema.Types.ObjectId],
+            ref: "User",
+            default: [],
+        },
     },
     {
         timestamps: true,

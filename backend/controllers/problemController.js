@@ -146,3 +146,43 @@ export const updateProblemStatus = async (
         });
     }
 };
+
+export const toggleUpvote = async (req, res) => {
+    try {
+        const problem = await Problem.findById(req.params.id);
+
+        if (!problem) {
+            return res.status(404).json({
+                success: false,
+                message: "Problem not found"
+            });
+        }
+
+        if (!problem.upvotes) {
+            problem.upvotes = [];
+        }
+
+        const userId = req.user.userId;
+        const index = problem.upvotes.indexOf(userId);
+
+        if (index === -1) {
+            problem.upvotes.push(userId);
+        } else {
+            problem.upvotes.splice(index, 1);
+        }
+
+        await problem.save();
+
+        res.status(200).json({
+            success: true,
+            message: index === -1 ? "Upvoted successfully" : "Upvote removed successfully",
+            upvotes: problem.upvotes
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};

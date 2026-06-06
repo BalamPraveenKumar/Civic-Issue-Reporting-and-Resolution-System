@@ -1,0 +1,235 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  background-color: #f8fafc;
+  min-height: calc(100vh - 72px);
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.headerTitle h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.headerTitle p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.leftCol,
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+  padding: 24px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.sectionDesc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* SLA Items List */
+.slaList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slaItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.slaInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slaCategory {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.slaPriority {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.slaCrit { background-color: #fee2e2; color: #b91c1c; }
+.slaHigh { background-color: #ffedd5; color: #c2410c; }
+.slaMed  { background-color: #fef9c3; color: #854d0e; }
+.slaLow  { background-color: #ecfdf5; color: #047857; }
+
+.slaTarget {
+  font-weight: 700;
+  color: #104f9e;
+}
+
+/* Directory Contacts Section */
+.directoryGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.directoryItem {
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.directoryItem h5 {
+  margin: 0 0 8px 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.dirRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.dirRow:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.dirRow svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+/* FAQ Accordion Styling */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faqItem {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.faqItem:hover {
+  border-color: #cbd5e1;
+}
+
+.faqItemOpen {
+  border-color: #104f9e;
+  box-shadow: 0 4px 12px rgba(16, 79, 158, 0.04);
+}
+
+.faqQuestionBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+  gap: 12px;
+}
+
+.faqQuestionBtn span {
+  flex: 1;
+}
+
+.faqChevron {
+  color: #94a3b8;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.faqItemOpen .faqChevron {
+  transform: rotate(180deg);
+  color: #104f9e;
+}
+
+.faqAnswerBox {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faqItemOpen .faqAnswerBox {
+  grid-template-rows: 1fr;
+}
+
+.faqAnswerContent {
+  overflow: hidden;
+  padding: 0 16px 16px 16px;
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 20px;
+  }
+}
