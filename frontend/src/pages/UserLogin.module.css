@@ -1,0 +1,198 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f8fafc;
+  flex: 1;
+}
+
+.loginCard {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid #e2e8f0;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeaderDecoration {
+  height: 4px;
+  background: linear-gradient(to right, #ff9933, #ffffff, #138808);
+  width: 100%;
+}
+
+.cardInfo {
+  padding: 32px 32px 16px 32px;
+  text-align: left;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e2f0fd;
+  color: #104f9e;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form {
+  padding: 0 32px 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.alertError {
+  margin: 0 32px 16px 32px;
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 12px 16px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  color: #991b1b;
+  text-align: left;
+  animation: fadeIn 0.2s ease;
+}
+
+.alertSuccess {
+  margin: 0 32px 16px 32px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: #166534;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.2s ease;
+}
+
+.successIcon {
+  color: #22c55e;
+  flex-shrink: 0;
+}
+
+.otpSection {
+  background-color: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+.otpTip {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 6px 0 0 0;
+  text-align: left;
+}
+
+.code {
+  background-color: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.actionSection {
+  margin-top: 10px;
+}
+
+.otpActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLinks {
+  background-color: #f8fafc;
+  padding: 16px 32px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  font-size: 12.5px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #104f9e;
+}
+
+.divider {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 20px 12px;
+  }
+  
+  .cardInfo, .form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .alertError, .alertSuccess {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .footerLinks {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

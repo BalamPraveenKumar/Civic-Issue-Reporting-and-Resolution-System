@@ -1,0 +1,165 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 3px solid #104f9e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tricolorStrip {
+  display: flex;
+  height: 4px;
+  width: 100%;
+}
+
+.saffron {
+  flex: 1;
+  background-color: #ff9933;
+}
+
+.white {
+  flex: 1;
+  background-color: #ffffff;
+}
+
+.green {
+  flex: 1;
+  background-color: #138808;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.emblemIcon {
+  background: linear-gradient(135deg, #104f9e, #1a5fae);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(16, 79, 158, 0.2);
+}
+
+.brandingText {
+  display: flex;
+  flex-direction: column;
+}
+
+.govText {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ff9933;
+}
+
+.appTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #104f9e;
+  letter-spacing: -0.3px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 8px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.navLink:hover {
+  background-color: #f8f9fa;
+  color: #104f9e;
+}
+
+.activeLink {
+  background-color: #f0f5fc;
+  color: #104f9e;
+  border-color: #d0e1fd;
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .logoSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .navLinks {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navLink {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+.userBadge {
+  font-size: 13px;
+  font-weight: 600;
+  color: #104f9e;
+  background-color: #f0f5fc;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #d0e1fd;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #dc3545;
+  background: none;
+  border: 1px solid #f8d7da;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
