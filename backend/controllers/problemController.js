@@ -7,7 +7,10 @@ export const createProblem = async (req, res) => {
         const {
             title,
             description,
-            category
+            category,
+            mandal,
+            village,
+            area
         } = req.body;
         console.log("JWT Payload:", req.user);
         const user = await User.findById(
@@ -27,6 +30,9 @@ export const createProblem = async (req, res) => {
             title,
             description,
             category,
+            mandal,
+            village,
+            area,
             districtId: user.districtId,
             userId: user._id,
             media

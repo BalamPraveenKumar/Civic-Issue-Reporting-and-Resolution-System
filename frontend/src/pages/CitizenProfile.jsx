@@ -11,10 +11,32 @@ import {
 import styles from "./CitizenProfile.module.css";
 
 const DISTRICT_MAP = {
-  EG001: "East Godavari District",
-  D001: "Central Metro District",
-  D002: "Greater Coastal District",
-  D003: "Valley Border District"
+  ASR001: "Alluri Sitharama Raju",
+  AKP001: "Anakapalli",
+  ATP001: "Anantapuramu",
+  ANM001: "Annamayya",
+  BPT001: "Bapatla",
+  CTR001: "Chittoor",
+  KSM001: "Dr. B. R. Ambedkar Konaseema",
+  EG001: "East Godavari",
+  ELR001: "Eluru",
+  GNT001: "Guntur",
+  KKD001: "Kakinada",
+  KRS001: "Krishna",
+  KNL001: "Kurnool",
+  NDL001: "Nandyal",
+  NTR001: "NTR",
+  PLD001: "Palnadu",
+  PMY001: "Parvathipuram Manyam",
+  PKM001: "Prakasam",
+  NLP001: "Sri Potti Sriramulu Nellore",
+  SSS001: "Sri Sathya Sai",
+  SKM001: "Srikakulam",
+  TPT001: "Tirupati",
+  VSP001: "Visakhapatnam",
+  VZM001: "Vizianagaram",
+  WG001: "West Godavari",
+  YSR001: "YSR Kadapa"
 };
 
 const CitizenProfile = () => {

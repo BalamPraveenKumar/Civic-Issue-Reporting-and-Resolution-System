@@ -28,6 +28,24 @@ const problemSchema = new mongoose.Schema(
             required: true,
         },
 
+        mandal: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+
+        village: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+
+        area: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+
         media: [
             {
                 type: {

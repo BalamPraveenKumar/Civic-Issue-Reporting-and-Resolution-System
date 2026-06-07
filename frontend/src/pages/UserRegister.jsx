@@ -7,10 +7,32 @@ import { createCitizenAccount } from "../services/api";
 import styles from "./UserRegister.module.css";
 
 const DISTRICT_OPTIONS = [
-  { value: "EG001", label: "East Godavari District (EG001)" },
-  { value: "D001", label: "Central Metro District (D001)" },
-  { value: "D002", label: "Greater Coastal District (D002)" },
-  { value: "D003", label: "Valley Border District (D003)" },
+  { value: "ASR001", label: "Alluri Sitharama Raju (ASR001)" },
+  { value: "AKP001", label: "Anakapalli (AKP001)" },
+  { value: "ATP001", label: "Anantapuramu (ATP001)" },
+  { value: "ANM001", label: "Annamayya (ANM001)" },
+  { value: "BPT001", label: "Bapatla (BPT001)" },
+  { value: "CTR001", label: "Chittoor (CTR001)" },
+  { value: "KSM001", label: "Dr. B. R. Ambedkar Konaseema (KSM001)" },
+  { value: "EG001", label: "East Godavari (EG001)" },
+  { value: "ELR001", label: "Eluru (ELR001)" },
+  { value: "GNT001", label: "Guntur (GNT001)" },
+  { value: "KKD001", label: "Kakinada (KKD001)" },
+  { value: "KRS001", label: "Krishna (KRS001)" },
+  { value: "KNL001", label: "Kurnool (KNL001)" },
+  { value: "NDL001", label: "Nandyal (NDL001)" },
+  { value: "NTR001", label: "NTR (NTR001)" },
+  { value: "PLD001", label: "Palnadu (PLD001)" },
+  { value: "PMY001", label: "Parvathipuram Manyam (PMY001)" },
+  { value: "PKM001", label: "Prakasam (PKM001)" },
+  { value: "NLP001", label: "Sri Potti Sriramulu Nellore (NLP001)" },
+  { value: "SSS001", label: "Sri Sathya Sai (SSS001)" },
+  { value: "SKM001", label: "Srikakulam (SKM001)" },
+  { value: "TPT001", label: "Tirupati (TPT001)" },
+  { value: "VSP001", label: "Visakhapatnam (VSP001)" },
+  { value: "VZM001", label: "Vizianagaram (VZM001)" },
+  { value: "WG001", label: "West Godavari (WG001)" },
+  { value: "YSR001", label: "YSR Kadapa (YSR001)" }
 ];
 
 const UserRegister = () => {

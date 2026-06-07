@@ -52,10 +52,32 @@ const STATUS_FILTERS = ["All", "Pending", "In Progress", "Resolved", "Rejected"]
 const BACKEND_URL = "http://localhost:5000";
 
 const DISTRICT_MAP = {
-  EG001: "East Godavari District",
-  D001: "Central Metro District",
-  D002: "Greater Coastal District",
-  D003: "Valley Border District",
+  ASR001: "Alluri Sitharama Raju",
+  AKP001: "Anakapalli",
+  ATP001: "Anantapuramu",
+  ANM001: "Annamayya",
+  BPT001: "Bapatla",
+  CTR001: "Chittoor",
+  KSM001: "Dr. B. R. Ambedkar Konaseema",
+  EG001: "East Godavari",
+  ELR001: "Eluru",
+  GNT001: "Guntur",
+  KKD001: "Kakinada",
+  KRS001: "Krishna",
+  KNL001: "Kurnool",
+  NDL001: "Nandyal",
+  NTR001: "NTR",
+  PLD001: "Palnadu",
+  PMY001: "Parvathipuram Manyam",
+  PKM001: "Prakasam",
+  NLP001: "Sri Potti Sriramulu Nellore",
+  SSS001: "Sri Sathya Sai",
+  SKM001: "Srikakulam",
+  TPT001: "Tirupati",
+  VSP001: "Visakhapatnam",
+  VZM001: "Vizianagaram",
+  WG001: "West Godavari",
+  YSR001: "YSR Kadapa"
 };
 
 /* ------------------------------------------------------------------ */
@@ -385,6 +407,18 @@ const IssueDetailsModal = ({ issue, onClose }) => {
                   <span className={styles.detailsMetaLabel}>Jurisdiction</span>
                   <span className={styles.detailsMetaVal}>{DISTRICT_MAP[issue.districtId] || issue.districtId}</span>
                 </div>
+                <div className={styles.detailsMetaItem}>
+                  <span className={styles.detailsMetaLabel}>Mandal</span>
+                  <span className={styles.detailsMetaVal}>{issue.mandal || "N/A"}</span>
+                </div>
+                <div className={styles.detailsMetaItem}>
+                  <span className={styles.detailsMetaLabel}>Village / Town</span>
+                  <span className={styles.detailsMetaVal}>{issue.village || "N/A"}</span>
+                </div>
+                <div className={styles.detailsMetaItem}>
+                  <span className={styles.detailsMetaLabel}>Area / Locality</span>
+                  <span className={styles.detailsMetaVal}>{issue.area || "N/A"}</span>
+                </div>
               </div>
             </div>
 
@@ -489,6 +523,9 @@ const ReportModal = ({ onClose, onSuccess }) => {
   const [title, setTitle]           = useState("");
   const [description, setDesc]      = useState("");
   const [category, setCategory]     = useState("");
+  const [mandal, setMandal]         = useState("");
+  const [village, setVillage]       = useState("");
+  const [area, setArea]             = useState("");
   const [files, setFiles]           = useState([]);
   const [previews, setPreviews]     = useState([]);
   const [loading, setLoading]       = useState(false);
@@ -523,6 +560,9 @@ const ReportModal = ({ onClose, onSuccess }) => {
     if (!title.trim())       err.title       = "Title is required";
     if (!description.trim()) err.description = "Description is required";
     if (!category)           err.category    = "Please select a category";
+    if (!mandal.trim())      err.mandal      = "Mandal is required";
+    if (!village.trim())     err.village     = "Village is required";
+    if (!area.trim())        err.area        = "Area is required";
     setErrors(err);
     return Object.keys(err).length === 0;
   };
@@ -540,6 +580,9 @@ const ReportModal = ({ onClose, onSuccess }) => {
       formData.append("title", title.trim());
       formData.append("description", description.trim());
       formData.append("category", category);
+      formData.append("mandal", mandal.trim());
+      formData.append("village", village.trim());
+      formData.append("area", area.trim());
       files.forEach((f) => formData.append("media", f));
 
       await submitCivicIssue(formData);
@@ -628,6 +671,57 @@ const ReportModal = ({ onClose, onSuccess }) => {
                 ))}
               </select>
               {errors.category && <span className={styles.formError}><AlertCircle size={12} />{errors.category}</span>}
+            </div>
+
+            {/* Mandal */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="issue-mandal">
+                Mandal <span>*</span>
+              </label>
+              <input
+                id="issue-mandal"
+                className={`${styles.formInput} ${errors.mandal ? styles.hasError : ""}`}
+                type="text"
+                placeholder="e.g. Kakinada Mandal"
+                value={mandal}
+                onChange={(e) => { setMandal(e.target.value); setErrors((p) => ({ ...p, mandal: "" })); }}
+                disabled={loading || !!successMsg}
+              />
+              {errors.mandal && <span className={styles.formError}><AlertCircle size={12} />{errors.mandal}</span>}
+            </div>
+
+            {/* Village */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="issue-village">
+                Village / Town <span>*</span>
+              </label>
+              <input
+                id="issue-village"
+                className={`${styles.formInput} ${errors.village ? styles.hasError : ""}`}
+                type="text"
+                placeholder="e.g. Ramanayyapeta"
+                value={village}
+                onChange={(e) => { setVillage(e.target.value); setErrors((p) => ({ ...p, village: "" })); }}
+                disabled={loading || !!successMsg}
+              />
+              {errors.village && <span className={styles.formError}><AlertCircle size={12} />{errors.village}</span>}
+            </div>
+
+            {/* Area */}
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel} htmlFor="issue-area">
+                Area / Locality <span>*</span>
+              </label>
+              <input
+                id="issue-area"
+                className={`${styles.formInput} ${errors.area ? styles.hasError : ""}`}
+                type="text"
+                placeholder="e.g. Ram Nagar, Street No 4"
+                value={area}
+                onChange={(e) => { setArea(e.target.value); setErrors((p) => ({ ...p, area: "" })); }}
+                disabled={loading || !!successMsg}
+              />
+              {errors.area && <span className={styles.formError}><AlertCircle size={12} />{errors.area}</span>}
             </div>
 
             {/* Description */}
